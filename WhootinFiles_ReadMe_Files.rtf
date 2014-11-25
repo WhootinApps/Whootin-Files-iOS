@@ -1,0 +1,561 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Italic;\f4\fnil\fcharset0 Menlo-BoldItalic;\f5\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red196\green26\blue22;\red170\green13\blue145;\red92\green38\blue153;
+\red46\green13\blue110;\red28\green0\blue207;\red0\green116\blue0;\red100\green56\blue32;\red38\green71\blue75;
+\red63\green110\blue116;}
+\margl1440\margr1440\vieww26820\viewh13580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs28 \cf0 Whootin Files:\
+\
+1) Whootin is a cloud based social networking, file sharing and mobile messaging platform. \
+\
+2) Whootin.com contains copyrighted material, trademarks and other proprietary information, including, but not limited to, text, software, photos, video, graphics, music and sound, and the entire contents of Whootin.com are copyrighted as a collective work under the USA copyright laws.\
+\
+3)Native  iPhone whootin files.app\
+\
+### Technology\
+\
+### Client (Ios)\
+\
+\
+Whootin Files\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+Whootin Files show user files in list that functions like a UITableView and also user can upload files via mobile.Tap tableview button user can share file,Delete file,Rename file,Export file(Download file,Email file)\
+\
+### 1) 
+\i\b App Delegate
+\i0\b0  ##########\
+\
+WMFAppDelegate.h\
+WMFAppDelegate.m\
+\
+## 2)
+\i\b Sign up
+\i0\b0  ##########\
+\
+WMFSignupViewController.h\
+WMFSignupViewController.m\
+\
+API For User Sign Up: 
+\f1\b \cf2 \CocoaLigature0 http://whootin.com/oauth/token (token)
+\f2\b0 \
+\pard\tx529\pardeftab529\pardirnatural
+
+\f0 \cf0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Code:\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2 \cf3 \CocoaLigature0 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_fname //
+\f3\i Firstname
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_lname //
+\f3\i Lastname
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_username //
+\f3\i Username
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_emailid //
+\f3\i EmailId
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_dob //
+\f3\i Date of birth
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_psw //
+\f3\i Password
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_conpsw //
+\f3\i Conformation
+\f2\i0  password
+\f0 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\
+\
+## 3)
+\i\b Sign in
+\i0\b0  #############\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f2 \cf0 \CocoaLigature0 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 WMFViewController.h\
+WMFViewController.m\
+\
+\
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_login_username; // 
+\f3\i Username
+\f2\i0 \
+\cf3 @property\cf0  (\cf3 weak\cf0 , \cf3 nonatomic\cf0 ) \cf3 IBOutlet\cf0  \cf4 UITextField\cf0  *txt_login_password; //
+\f3\i Password
+\f2\i0 \
+\
+### 4)
+\f4\i\b Files Retrieve data from whootin server
+\f2\i0\b0  #####\
+\
+WMFFirstTableViewController.h\
+WMFFirstTableViewController.m\
+\
+\
+Count = 20 //
+\f3\i This integer refer how many data retrieve from whootin.
+\f2\i0 \
+\
+Maximum count = 200\
+Minimum count = 20 \
+\
+**** 5)
+\f1\b File Retrieved From Whootin
+\f2\b0  *****************\
+\
+API For Get User data list:\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b \cf2 http://whootin.com/api/v1/files.json?count=
+\f2\b0 \cf0 Count\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b \cf0 -(void)whootingGetFiles
+\f2\b0  // 
+\f3\i This function used to retrieve data from whootin and store in Arrays \
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2\i0 \cf0 \
+\cf4 NSURL\cf0  *postURL = [[\cf4 NSURL\cf0  \cf5 alloc\cf0 ] \cf5 initWithString\cf0 :\cf2 @"http://whootin.com/api/v1/files.json?count=20"\cf0 ];\
+	\cf4 NSMutableURLRequest\cf0  *request = [\cf4 NSMutableURLRequest\cf0  \cf5 requestWithURL\cf0 :postURL\
+														   \cf5 cachePolicy\cf0 :\cf5 NSURLRequestUseProtocolCachePolicy\cf0 \
+													   \cf5 timeoutInterval\cf0 :\cf6 30.0\cf0 ];\
+    [request \cf5 setHTTPMethod\cf0 :\cf2 @"GET"\cf0 ];\
+	\cf7 //NSString *stringBoundary = @"0xKhTmLbOuNdArY---This_Is_ThE_BoUnDaRyy---pqo";\cf0 \
+    [request \cf5 setValue\cf0 :\cf2 @"application/json"\cf0  \cf5 forHTTPHeaderField\cf0 :\cf2 @"Accept"\cf0 ];\
+	[request \cf5 setValue\cf0 :[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"Bearer %@"\cf0 , \cf8 kAccessToken\cf0 ] \cf5 forHTTPHeaderField\cf0 :\cf2 @"Authorization"\cf0 ];\
+	\cf5 NSLog\cf0 (\cf2 @"body set"\cf0 );\
+	\cf4 NSHTTPURLResponse\cf0 * response =[[\cf4 NSHTTPURLResponse\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+	\cf4 NSError\cf0 * error = [[\cf4 NSError\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ] ;\
+        \cf4 NSData\cf0  *responseData = [\cf4 NSURLConnection\cf0  \cf5 sendSynchronousRequest\cf0 :request \cf5 returningResponse\cf0 :&response \cf5 error\cf0 :&error];\
+    \cf4 NSString\cf0  *newStr=[[\cf4 NSString\cf0  \cf5 alloc\cf0 ] \cf5 initWithData\cf0 :responseData \cf5 encoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ];\
+   \cf4 NSString\cf0  *json=[newStr \cf9 JSONValue\cf0 ]; // 
+\f3\i Here Get Response from whooti
+\f2\i0 n\
+  \
+        \cf10 mu_fileNames_Con\cf0  = [[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"name"\cf0 ]]; //
+\f3\i Get FileName\
+
+\f2\i0         \cf10 mu_fileId_Con\cf0  = [[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"id"\cf0 ]]; // 
+\f3\i Get File ID
+\f2\i0 \
+        \cf10 mu_fileType_Con\cf0  = [[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"type"\cf0 ]]; //
+\f3\i Get File type
+\f2\i0 \
+        \cf10 mu_filesize_Con\cf0  =[[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"file_size"\cf0 ]]; //
+\f3\i Get File size
+\f2\i0  \
+        \cf10 mu_filecreated_Con\cf0  = [[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"created_at"\cf0 ]]; //
+\f3\i Get File Create time
+\f2\i0 \
+        \cf10 mu_fileUrl_Con\cf0  =[[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"short_url"\cf0 ]]; // 
+\f3\i Get File Short Url
+\f2\i0 \
+        \cf10 mu_fileDownUrl_con\cf0  = [[\cf4 NSMutableArray\cf0  \cf5 alloc\cf0 ]\cf5 initWithArray\cf0 :[json \cf5 valueForKey\cf0 :\cf2 @"url"\cf0 ]]; // 
+\f3\i Get File Url
+\f2\i0 \
+\
+\
+\
+**** 6)
+\f1\b File Upload to Whootin 
+\f2\b0 *****************\
+\
+-(void)whootinFileUploading :(\cf4 UIImage\cf0  *)img fileName:(\cf4 NSString\cf0  *)fnames\
+\
+\cf4 NSURL\cf0  *postURL = [[\cf4 NSURL\cf0  \cf5 alloc\cf0 ]\cf5 initWithString\cf0 : \cf2 @"http://whootin.com/api/v1/files/new.json"\cf0 ];\
+    \cf4 NSMutableURLRequest\cf0  *request = [\cf4 NSMutableURLRequest\cf0  \cf5 requestWithURL\cf0 :postURL\
+                                                           \cf5 cachePolicy\cf0 :\cf5 NSURLRequestUseProtocolCachePolicy\cf0 \
+                                                       \cf5 timeoutInterval\cf0 :\cf6 30.0\cf0 ];\
+    \cf7 // change type to POST (default is GET)\cf0 \
+    [request \cf5 setHTTPMethod\cf0 :\cf2 @"POST"\cf0 ];\
+    \cf7 // just some random text that will never occur in the body\cf0 \
+    \cf4 NSString\cf0  *stringBoundary = \cf2 @"0xKhTmLbOuNdArY---This_Is_ThE_BoUnDaRyy---pqo"\cf0 ;\
+    \cf7 // header value\cf0 \
+    \cf4 NSString\cf0  *headerBoundary = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"multipart/form-data; boundary=%@"\cf0 ,\
+                                stringBoundary];\
+    \cf7 //add body\cf0 \
+    \cf4 NSMutableData\cf0  *postBody = [\cf4 NSMutableData\cf0  \cf5 data\cf0 ];\
+    [request \cf5 addValue\cf0 :headerBoundary \cf5 forHTTPHeaderField\cf0 :\cf2 @"Content-Type"\cf0 ];\
+    \cf5 NSLog\cf0 (\cf2 @"add Image"\cf0 );\
+    \cf7 //image\cf0 \
+    [postBody \cf5 appendData\cf0 :[[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"--%@\\r\\n"\cf0 , stringBoundary] \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \
+    \cf4 NSDateFormatter\cf0 * dateFormatter = [[\cf4 NSDateFormatter\cf0  \cf5 alloc\cf0 ] \cf5 init\cf0 ];\
+    [dateFormatter \cf5 setDateFormat\cf0 :\cf2 @"yyMMddhhmms"\cf0 ];\
+    \cf4 NSString\cf0  *dateString = [dateFormatter \cf5 stringFromDate\cf0 :[\cf4 NSDate\cf0  \cf5 date\cf0 ]];\
+    \cf4 NSString\cf0  *fnams;\
+    \cf3 BOOL\cf0   strs = [\cf3 self\cf0  \cf9 FolderNameChecking\cf0 :fnames \cf9 names\cf0 :\cf2 @"file"\cf0 ];\
+    if(strs==\cf3 YES\cf0 )\
+    \{\
+      \cf4 NSArray\cf0  *assestSp = [fnames \cf5 componentsSeparatedByString\cf0 :\cf2 @"."\cf0 ];\
+      fnams = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"%@%@.%@"\cf0 ,assestSp[\cf6 0\cf0 ],dateString,assestSp[\cf6 1\cf0 ]];\
+    \}\
+    else\
+    \{\
+        fnams = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"%@"\cf0 ,fnames];\
+    \}\
+    \cf4 NSArray\cf0  *link = [fnames \cf5 componentsSeparatedByString\cf0 :\cf2 @"."\cf0 ];\
+    \cf4 NSString\cf0  *types = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"%@"\cf0 ,link[\cf6 1\cf0 ]];\
+    \cf4 NSString\cf0  *appData = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"Content-Disposition: form-data; name=\\"file\\"; filename=\\"%@\\"\\r\\n"\cf0 ,fnams];\
+    [postBody \cf5 appendData\cf0 :[appData \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \cf7 //[postBody appendData:[@"Content-Disposition: form-data; name=\\"file\\"; filename=\\"itemkop.png\\"\\r\\n" dataUsingEncoding:NSUTF8StringEncoding]];\cf0 \
+    if([types \cf5 isEqualToString\cf0 :\cf2 @"MOV"\cf0 ])\
+    \{\
+         [postBody \cf5 appendData\cf0 :[\cf2 @"Content-Type: video/quicktime\\r\\n"\cf0  \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \}\
+    else\
+    \{\
+       [postBody \cf5 appendData\cf0 :[\cf2 @"Content-Type: image/png\\r\\n"\cf0  \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \}\
+    [postBody \cf5 appendData\cf0 :[\cf2 @"Content-Transfer-Encoding: binary\\r\\n\\r\\n"\cf0  \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \cf10 imgData\cf0  =\cf5 UIImageJPEGRepresentation\cf0 (img, \cf6 1.0\cf0 );\
+    [postBody \cf5 appendData\cf0 :  \cf10 imgData\cf0 ];\
+    [postBody \cf5 appendData\cf0 :[\cf2 @"\\r\\n"\cf0  \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    [postBody \cf5 appendData\cf0 :[[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"--%@--\\r\\n"\cf0 , stringBoundary] \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+    \cf7 // add body to post\cf0 \
+    [request \cf5 setHTTPBody\cf0 :postBody];\
+    [request \cf5 setValue\cf0 :\cf2 @"application/json"\cf0  \cf5 forHTTPHeaderField\cf0 :\cf2 @"Accept"\cf0 ];\
+    [request \cf5 setValue\cf0 :[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"Bearer %@"\cf0 , \cf8 kAccessToken\cf0 ] \cf5 forHTTPHeaderField\cf0 :\cf2 @"Authorization"\cf0 ];\
+    \cf4 dispatch_queue_t\cf0  concurrentQueue = \cf5 dispatch_get_global_queue\cf0 (\cf8 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , \cf6 0\cf0 );\
+    \cf7 //this will start the image loading in bg\cf0 \
+    \cf5 dispatch_async\cf0 (concurrentQueue, ^\{\
+        \cf4 NSData\cf0  *responseData = [\cf4 NSURLConnection\cf0  \cf5 sendSynchronousRequest\cf0 :request \cf5 returningResponse\cf0 :\cf3 nil\cf0  \cf5 error\cf0 :\cf3 nil\cf0 ];\
+        \cf5 NSLog\cf0 (\cf2 @"just sent request"\cf0 );\
+        \cf7 //this will set the image when loading is finished\cf0 \
+        \cf5 dispatch_async\cf0 (\cf8 dispatch_get_main_queue\cf0 (), ^\{\
+            \
+            \cf7 // convert data into string\cf0 \
+            \cf4 NSString\cf0  *responseString = [[\cf4 NSString\cf0  \cf5 alloc\cf0 ] \cf5 initWithData\cf0 :responseData \cf5 encoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ];\
+            \cf5 NSLog\cf0 (\cf2 @"Data ResponseValues:%@"\cf0 ,responseString);\
+            if (responseString)\
+            \{\
+                \
+            \}\
+            else\
+            \{\
+                \
+            \}\
+        \});\
+    \});\
+\
+\
+****** 
+\f1\b Deleting File
+\f2\b0  ********************\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b \cf0 -(void)whootinFileDeleting
+\f2\b0 \
+\
+
+\f1\b Folder Delete Api
+\f2\b0 :\
+\
+ID = 1569 // This integer refer to deleted folder ID\
+\pard\tx529\pardeftab529\pardirnatural
+\cf2 http://whootin.com/api/v1/folders/destroy/\cf0 ID\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b \cf0 File Delete Api:\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2\b0 \cf0 ID = 1569 // This integer refer to deleted file ID\
+ 
+\f1\b \
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2\b0 \cf2 http://whootin.com/api/v1/files/destroy/%@"\cf0 , ID\
+\
+******* 
+\f1\b Whootin Rename file
+\f2\b0  ***************\
+\
+- (\cf3 IBAction\cf0 )btn_whootinrename_rename:(\cf3 id\cf0 )sender\
+\
+******* 
+\f1\b Rename  
+\f2\b0 ***************\
+Rename Api:\
+\
+filename = \'93Hello\'94// this string refer to name of file\
+\cf2 \
+@"http://whootin.com/api/v1/files/rename/\cf0 filename\cf2 .json\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 ******* 
+\f1\b Whootin share file
+\f2\b0  ***************\
+\pard\tx529\pardeftab529\pardirnatural
+\cf2 \
+\pard\tx529\pardeftab529\pardirnatural
+\cf0 - (\cf3 IBAction\cf0 )main_share:(\cf3 id\cf0 )sender\
+\
+#### 7)
+\f4\i\b Folder Creation
+\f2\i0\b0  #####\
+\
+WMFFolderViewController.h\
+WMFFolderViewCOntroller.m\
+\
+****** 
+\f1\b Folder Creation
+\f2\b0  **********\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf9 -(void)folderCreationMethods\cf0 \
+\
+Api for folder creation:
+\f1\b \cf2 http://whootin.com/api/v1/folders/new.json
+\f2\b0 \cf0 \
+\
+\
+ \cf5 NSLog\cf0 (\cf2 @"Whootin Post Calling"\cf0 );\
+            \cf4 NSURL\cf0  *postURL = [[\cf4 NSURL\cf0  \cf5 alloc\cf0 ]\cf5 initWithString\cf0 : \cf2 @"http://whootin.com/api/v1/folders/new.json"\cf0 ];\
+            \cf4 NSMutableURLRequest\cf0  *request = [\cf4 NSMutableURLRequest\cf0  \cf5 requestWithURL\cf0 :postURL\
+                                                                   \cf5 cachePolicy\cf0 :\cf5 NSURLRequestUseProtocolCachePolicy\cf0 \
+                                                               \cf5 timeoutInterval\cf0 :\cf6 30.0\cf0 ];\
+            \cf7 // change type to POST (default is GET)\cf0 \
+            [request \cf5 setHTTPMethod\cf0 :\cf2 @"POST"\cf0 ];\
+            \cf7 // just some random text that will never occur in the body\cf0 \
+            \cf4 NSString\cf0  *stringBoundary = \cf2 @"0xKhTmLbOuNdArY---This_Is_ThE_BoUnDaRyy---pqo"\cf0 ;\
+            \cf7 // header value\cf0 \
+            \cf4 NSString\cf0  *headerBoundary = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"multipart/form-data; boundary=%@"\cf0 ,\
+                                        stringBoundary];\
+            \cf7 //add body\cf0 \
+            \cf4 NSMutableData\cf0  *postBody = [\cf4 NSMutableData\cf0  \cf5 data\cf0 ];\
+            \cf5 NSLog\cf0 (\cf2 @"add Image"\cf0 );\
+            \cf7 //image\cf0 \
+            \cf4 NSString\cf0  *folderNames = [\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"Content-Disposition: form-data;name=name; name=%@"\cf0 ,fl];\
+            \cf5 NSLog\cf0 (\cf2 @"Folder %@"\cf0 ,folderNames);\
+            [postBody \cf5 appendData\cf0 :[[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"--%@\\r\\n"\cf0 , stringBoundary] \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+            [postBody \cf5 appendData\cf0 :[folderNames \cf5 dataUsingEncoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ]];\
+            [request \cf5 setHTTPBody\cf0 :postBody];\
+            [request \cf5 setValue\cf0 :\cf2 @"application/json"\cf0  \cf5 forHTTPHeaderField\cf0 :\cf2 @"Accept"\cf0 ];\
+            [request \cf5 setValue\cf0 :[\cf4 NSString\cf0  \cf5 stringWithFormat\cf0 :\cf2 @"Bearer %@"\cf0 , \cf8 kAccessToken\cf0 ] \cf5 forHTTPHeaderField\cf0 :\cf2 @"Authorization"\cf0 ];\
+            \cf4 NSData\cf0  *responseData = [\cf4 NSURLConnection\cf0  \cf5 sendSynchronousRequest\cf0 :request \cf5 returningResponse\cf0 :\cf3 nil\cf0  \cf5 error\cf0 :\cf3 nil\cf0 ];\
+            \cf4 NSString\cf0  *newStr=[[\cf4 NSString\cf0  \cf5 alloc\cf0 ] \cf5 initWithData\cf0 :responseData \cf5 encoding\cf0 :\cf5 NSUTF8StringEncoding\cf0 ];\
+            \cf4 NSString\cf0  *json=[newStr \cf9 JSONValue\cf0 ]; // 
+\f4\i\b Folder Details
+\f2\i0\b0 \
+\
+\
+\
+#### 8)
+\f4\i\b Image Gallery
+\f2\i0\b0   #########\
+\
+\
+QBImagePickerController.h\
+QBImagePickerController.m \
+\
+\
+In QBImagePickerController controller used to show photos get from local gallery.\
+UICollectionView used.\
+\
+\
+# QBImagePickerController\
+A clone of UIImagePickerController with multiple selection support.\
+\
+\
+## ScreenShot\
+![01.png](http://adotout.sakura.ne.jp/github/QBImagePickerController/2.0/01.png)\
+\
+![02.png](http://adotout.sakura.ne.jp/github/QBImagePickerController/2.0/02.png)\
+\
+\
+## Installation\
+QBImagePickerController is available in CocoaPods.\
+\
+    pod 'QBImagePickerController'\
+\
+If you want to install manually, download this repository and copy files in QBImagePickerController directory to your project, and link `AssetsLibrary.framework`.\
+\
+\
+## Examples\
+### Check If Source is Accessible\
+    if (![QBImagePickerController isAccessible]) \{\
+        NSLog(@"Error: Source is not accessible.");\
+    \}\
+\
+### Single Image Picker\
+	QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];\
+	imagePickerController.delegate = self;\
+\
+### Multiple Image Picker\
+	QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];\
+	imagePickerController.delegate = self;\
+	imagePickerController.allowsMultipleSelection = YES;\
+\
+### Multiple Image Picker with Limitation\
+	QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];\
+	imagePickerController.delegate = self;\
+	imagePickerController.allowsMultipleSelection = YES;\
+	imagePickerController.minimumNumberOfSelection = 3;\
+	imagePickerController.maximumNumberOfSelection = 6;\
+\
+### Specify the Albums to Show\
+	QBImagePickerController *imagePickerController = [[QBImagePickerController alloc] init];\
+	imagePickerController.delegate = self;\
+	imagePickerController.groupTypes = @[\
+	                                     @(ALAssetsGroupSavedPhotos),\
+	                                     @(ALAssetsGroupPhotoStream),\
+	                                     @(ALAssetsGroupAlbum)\
+	                                     ];\
+\
+The order of albums will be the same as specified in `groupTypes` array.\
+\
+### Show Image Picker\
+**QBImagePickerController is not a subclass of UINavigationController.**  \
+If you want to show the picker as a modal view, you have to set the picker to `topViewController` property of an instance of UINavigationController.  \
+If you want to push the picker to UINavigtionController, you don't have to do anything.\
+\
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:imagePickerController];\
+    [self presentViewController:navigationController animated:YES completion:NULL];\
+\
+\
+## License\
+*QBImagePickerController* is released under the **MIT License**, see *LICENSE.txt*.\
+\
+\
+###
+\f4\i\b  9)HUD
+\f2\i0\b0  ######\
+\
+MBProgressHUD.h\
+MBProgressHUD.m \
+\
+# MBProgressHUD [![Build Status](https://travis-ci.org/matej/MBProgressHUD.png)](https://travis-ci.org/matej/MBProgressHUD)\
+\
+MBProgressHUD is an iOS drop-in class that displays a translucent HUD with an indicator and/or labels while work is being done in a background thread. The HUD is meant as a replacement for the undocumented, private UIKit UIProgressHUD with some additional features. \
+\
+## Requirements\
+\
+MBProgressHUD works on any iOS version and is compatible with both ARC and non-ARC projects. It depends on the following Apple frameworks, which should already be included with most Xcode templates:\
+\
+* Foundation.framework\
+* UIKit.framework\
+* CoreGraphics.framework\
+\
+You will need LLVM 3.0 or later in order to build MBProgressHUD. \
+\
+## Adding MBProgressHUD to your project\
+\
+### Cocoapods\
+\
+[CocoaPods](http://cocoapods.org) is the recommended way to add MBProgressHUD to your project.\
+\
+1. Add a pod entry for MBProgressHUD to your Podfile `pod 'MBProgressHUD', '~> 0.8'`\
+2. Install the pod(s) by running `pod install`.\
+3. Include MBProgressHUD wherever you need it with `#import "MBProgressHUD.h"`.\
+\
+### Source files\
+\
+Alternatively you can directly add the `MBProgressHUD.h` and `MBProgressHUD.m` source files to your project.\
+\
+1. Download the [latest code version](https://github.com/matej/MBProgressHUD/archive/master.zip) or add the repository as a git submodule to your git-tracked project. \
+2. Open your project in Xcode, then drag and drop `MBProgressHUD.h` and `MBProgressHUD.m` onto your project (use the "Product Navigator view"). Make sure to select Copy items when asked if you extracted the code archive outside of your project. \
+3. Include MBProgressHUD wherever you need it with `#import "MBProgressHUD.h"`.\
+\
+### Static library\
+\
+You can also add MBProgressHUD as a static library to your project or workspace. \
+\
+1. Download the [latest code version](https://github.com/matej/MBProgressHUD/downloads) or add the repository as a git submodule to your git-tracked project. \
+2. Open your project in Xcode, then drag and drop `MBProgressHUD.xcodeproj` onto your project or workspace (use the "Product Navigator view"). \
+3. Select your target and go to the Build phases tab. In the Link Binary With Libraries section select the add button. On the sheet find and add `libMBProgressHUD.a`. You might also need to add `MBProgressHUD` to the Target Dependencies list. \
+4. Include MBProgressHUD wherever you need it with `#import <MBProgressHUD/MBProgressHUD.h>`.\
+\
+## Usage\
+\
+The main guideline you need to follow when dealing with MBProgressHUD while running long-running tasks is keeping the main thread work-free, so the UI can be updated promptly. The recommended way of using MBProgressHUD is therefore to set it up on the main thread and then spinning the task, that you want to perform, off onto a new thread. \
+\
+```objective-c\
+[MBProgressHUD showHUDAddedTo:self.view animated:YES];\
+dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^\{\
+	// Do something...\
+	dispatch_async(dispatch_get_main_queue(), ^\{\
+		[MBProgressHUD hideHUDForView:self.view animated:YES];\
+	\});\
+\});\
+```\
+\
+If you need to configure the HUD you can do this by using the MBProgressHUD reference that showHUDAddedTo:animated: returns. \
+\
+```objective-c\
+MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];\
+hud.mode = MBProgressHUDModeAnnularDeterminate;\
+hud.labelText = @"Loading";\
+[self doSomethingInBackgroundWithProgressCallback:^(float progress) \{\
+	hud.progress = progress;\
+\} completionCallback:^\{\
+	[hud hide:YES];\
+\}];\
+```\
+\
+UI updates should always be done on the main thread. Some MBProgressHUD setters are however considered "thread safe" and can be called from background threads. Those also include `setMode:`, `setCustomView:`, `setLabelText:`, `setLabelFont:`, `setDetailsLabelText:`, `setDetailsLabelFont:` and `setProgress:`.\
+\
+If you need to run your long-running task in the main thread, you should perform it with a slight delay, so UIKit will have enough time to update the UI (i.e., draw the HUD) before you block the main thread with your task.\
+\
+```objective-c\
+[MBProgressHUD showHUDAddedTo:self.view animated:YES];\
+dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);\
+dispatch_after(popTime, dispatch_get_main_queue(), ^(void)\{\
+	// Do something...\
+	[MBProgressHUD hideHUDForView:self.view animated:YES];\
+\});\
+```\
+\
+You should be aware that any HUD updates issued inside the above block won't be displayed until the block completes.\
+\
+For more examples, including how to use MBProgressHUD with asynchronous operations such as NSURLConnection, take a look at the bundled demo project. Extensive API documentation is provided in the header file (MBProgressHUD.h).\
+\
+#### 10)
+\f4\i\b Passcodelock
+\f2\i0\b0  ##################\
+\
+\pard\pardeftab720
+
+\f5 \cf0 \CocoaLigature1  In this application has sensitive user information and we need to implement a passcode screen to be displayed whenever the user opens the application. com.whootin.passcodelock in this package we are provided for passcodelock classes available.\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2 \cf0 \CocoaLigature0 \
+#### 11)
+\f4\i\b Settings show user details, current active plan for particular user
+\f2\i0\b0  #######\
+\
+\
+SettingsViewController.h\
+SettingsViewController.m\
+\
+\
+\
+#### 
+\f4\i\b 12)FrameWork
+\f2\i0\b0  ###########\
+\
+\
+1)QuartzCore\
+2)Social\
+3)Twitter\
+4)MessageUI\
+5)Accounts\
+6)AssetsLibrary\
+7)Facebook\
+8)StoreKit\
+9)CoreGraphics\
+}
